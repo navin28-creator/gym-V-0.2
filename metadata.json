@@ -1,0 +1,6 @@
+{
+  "name": "Flex & Flow Gym Management",
+  "description": "Local-first Windows gym management system with SQLite storage, owner/staff recovery, INR external payment ledger, Tailscale Android Expo connection, reversible audit log, and AES-256-GCM backups.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "flex-and-flow-gym-manager",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Offline-first Windows Desktop Gym Member Manager powered by Electron, React, Node.js, and SQLite.",
+  "author": "Flex & Flow Gym Systems",
+  "main": "dist-electron/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "start": "tsx server.ts",
+    "build": "vite build && npm run build:electron",
+    "build:electron": "esbuild electron/main.ts --bundle --platform=node --format=esm --packages=external --outfile=dist-electron/main.js && esbuild electron/preload.ts --bundle --platform=node --format=cjs --packages=external --outfile=dist-electron/preload.cjs",
+    "package:win": "npm run build && electron-builder --win --x64",
+    "preview": "vite preview",
+    "clean": "node -e \"for (const d of ['dist','dist-electron','release']) require('fs').rmSync(d,{recursive:true,force:true})\"",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "dotenv": "^17.2.3",
+    "electron-updater": "^6.8.11",
+    "express": "^4.21.2",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "recharts": "^3.10.1",
+    "vite": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.4.21",
+    "electron": "^45.3.1",
+    "electron-builder": "^26.18.0",
+    "esbuild": "^0.28.0",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.21.0",
+    "typescript": "^7.0.2"
+  }
+}

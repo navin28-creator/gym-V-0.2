@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "../dist-electron",
+    "rootDir": "..",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "./main.ts",
+    "./preload.ts",
+    "../backend/**/*.ts",
+    "../shared/**/*.ts",
+    "../src/types/**/*.ts"
+  ]
+}
