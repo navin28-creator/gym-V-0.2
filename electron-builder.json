@@ -1,0 +1,48 @@
+
+{
+  "appId": "com.flexflow.gymmanager",
+  "productName": "Flex & Flow",
+  "copyright": "Copyright © 2026 Flex & Flow Gym",
+  "directories": {
+    "output": "release",
+    "buildResources": "public"
+  },
+  "files": [
+    "dist/**/*",
+    "dist-electron/**/*",
+    "public/icon.png",
+    "package.json"
+  ],
+  "extraResources": [
+    {
+      "from": "public/icon.png",
+      "to": "icon.png"
+    }
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "public/icon.png"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Flex & Flow Gym Manager",
+    "deleteAppDataOnUninstall": false,
+    "artifactName": "Flex-and-Flow-Setup-${version}.${ext}"
+  },
+  "portable": {
+    "artifactName": "Flex-and-Flow-Portable-${version}.${ext}"
+  }
+}
